@@ -8,8 +8,8 @@ module.exports = {
         headerMobile: "repeat(2, minmax(100px, 1fr))",
       },
       gridTemplateRows: {
-        header: "auto 20px",
-        headerMobile: "40px 40px",
+        navigationLinks: "auto 15px",
+        navigationLinksMobile: "40px 40px",
       },
     },
     fontFamily: {
