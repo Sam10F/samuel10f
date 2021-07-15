@@ -1,19 +1,6 @@
 .menu-icon {
   @apply flex items-center cursor-pointer text-xl mr-8;
 }
-
-.left {
-  left: 0;
-}
-
-.center {
-  left: 151px;
-}
-
-.right {
-  left: 302px;
-}
-
 // .menu-icon.router-active {
 //   // @apply border-b border-black;
 // }

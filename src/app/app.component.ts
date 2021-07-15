@@ -11,7 +11,6 @@ export class AppComponent implements OnInit{
   faIdCard = faIdCard;
   title = 'samuel10f';
   private underline;
-  private oldClass;
 
   public navigationLinks = [
     {title: 'Proyectos', routerLink: '/proyectos'},
@@ -19,18 +18,12 @@ export class AppComponent implements OnInit{
     {title: 'Contacto', routerLink: '/contacto'}
   ]
 
-  private test = ['left', 'center', 'right'];
-
   ngOnInit(): void {
     this.underline = document.getElementById('LinkActiveUnderline');
   }
 
   setLinkHoverAnimation(linkIndex: number) {
-    
-    // let linkWidth = 151  * linkIndex;
-    // this.underline.style.left = `${linkWidth}px`;
-    this.underline.classList.remove(this.oldClass);
-    this.oldClass = this.test[linkIndex]
-    this.underline.classList.add(this.test[linkIndex])
+    let linkWidth = 151  * linkIndex;
+    this.underline.style.left = `${linkWidth}px`;
   }
 }
