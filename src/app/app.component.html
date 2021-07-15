@@ -1,18 +1,45 @@
-<nav>
-  <ul class="flex flex-col h-full justify-center">
-    <li class="mt-8" routerLink="/blog" routerLinkActive="active-link">
-      HOLAA
-      <fa-icon [icon]="faCoffee"></fa-icon>
-    </li>
-    <li class="mt-8" routerLink="/blog" routerLinkActive="active-link">
-      HOLAA
-      <fa-icon [icon]="faCoffee"></fa-icon>
-    </li>
-    <li class="mt-8" routerLink="/blog" routerLinkActive="active-link">
-      HOLAA
-      <fa-icon [icon]="faCoffee"></fa-icon>
-    </li>
-  </ul>
-</nav>
+<header>
+  <nav
+    class="text-xs lg:text-base grid grid-rows-headerMobile lg:grid-rows-header gap-y-1 py-4 grid-cols-headerMobile lg:grid-cols-header px-2 lg:px-6 font-assistant tracking-widest font-light max-w-screen-2xl m-auto order-3 lg:order-1">
+    <ul
+      class="relative grid grid-cols-3 grid-rows-2 row-start-2 lg:row-start-1 row-end-2 lg:row-end-1 col-start-1 lg:col-start-1 col-end-3 lg:col-end-1">
+      <li *ngFor="let navigationLink of navigationLinks let i=index" class="menu-icon"
+        routerLink="navigationLink.routerLink" (mouseenter)="setLinkHoverAnimation(i)">
+        {{navigationLink.title}}
+      </li>
+      <li class="col-span-3">
+        <span id="LinkActiveUnderline" class="absolute border-t border-black w-2.5 transition-all duration-200"
+          style="width: 100px;"></span>
+      </li>
+    </ul>
 
-<router-outlet></router-outlet>
+    <h1
+      class="text-3xl justify-start lg:justify-center flex items-start border-b border-black leading-7 row-start-1 col-start-1 lg:col-start-2 row-span-1 lg:row-span-2 order-1 lg:order-2">
+      Samuel10F</h1>
+
+    <ul class="flex justify-end items-center order-2">
+      <li>
+        <a href="https://twitter.com/Samuel10F" target="_blank">
+          <img src="/assets/icons/twitter-icon.svg" alt="Icon and link to Samuel10F Twitter">
+        </a>
+      </li>
+      <li class="cursor-pointer ml-4">
+        <a href="https://www.linkedin.com/in/samuel10fernandez" target="_blank">
+          <img src="/assets/icons/Linkeding-icon.svg" alt="Icon and link to Samuel10F Linkedin">
+        </a>
+      </li>
+      <li class="ml-4">
+        <a href="https://github.com/Sam10F" target="_blank">
+          <img src="/assets/icons/github-icon.svg" alt="Icon and link to Samuel10F Github">
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+</header>
+
+<router-outlet class="order-last"></router-outlet>
+
+<footer class="absolute bottom-0 h-16 border-t border-black flex justify-center items-center w-screen">
+  <small>COPYRIGHT SAMUEL DIEZ © 2021 - ALL RIGHTS RESERVED.</small>
+</footer>
