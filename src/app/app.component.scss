@@ -7,5 +7,5 @@ nav {
 }
 
 .navigation-link {
-  @apply flex items-center cursor-pointer text-xl mr-8;
+  @apply flex items-center relative cursor-pointer text-base sm:text-xl mr-8;
 }

@@ -1,40 +1,64 @@
 <header>
   <nav>
     <ul id="NavigationMenu" class="navigation-menu" (mouseleave)="restartLinkActiveUnderline()">
-      <li *ngFor="let navigationLink of navigationLinks let i=index" class="navigation-link" routerLinkActive="border-b"
-        [routerLink]="navigationLink.routerLink" (mouseenter)="moveLinkActiveUnderline(i)"
-        (window:resize)="restartLinkActiveUnderline()">
-        {{navigationLink.title}}
+      <li
+        *ngFor="let navigationLink of navigationLinks; let i = index"
+        class="navigation-link"
+        routerLinkActive="border-b"
+        [attr.linkIndex]="i"
+        [routerLink]="navigationLink.routerLink"
+        (mouseenter)="moveLinkActiveUnderline(i)"
+        (window:resize)="restartLinkActiveUnderline()"
+      >
+        {{ navigationLink.title }}
       </li>
       <li class="col-span-3">
-        <span id="LinkActiveUnderline" class="absolute border-t border-black w-2.5 transition-all duration-200"
-          style="width: 100px;"></span>
+        <span
+          id="LinkActiveUnderline"
+          class="absolute border-t border-black w-2.5 transition-all duration-200"
+          style="width: calc(33.3% - 2rem)"
+        ></span>
       </li>
     </ul>
 
     <h1
-      class="text-3xl justify-start lg:justify-center flex items-start border-b border-black leading-7 row-start-1 col-start-1 lg:col-start-2 row-span-1 lg:row-span-2 order-1 lg:order-2">
-      Samuel10F</h1>
+      class="
+        text-3xl
+        justify-start
+        lg:justify-center
+        flex
+        items-start
+        leading-7
+        row-start-1
+        col-start-1
+        lg:col-start-2
+        row-span-1
+        lg:row-span-2
+        order-1
+        lg:order-2
+      "
+    >
+      Samuel10F
+    </h1>
 
     <ul class="flex justify-end items-center order-2">
       <li>
         <a href="https://twitter.com/Samuel10F" target="_blank">
-          <img src="/assets/icons/twitter-icon.svg" alt="Icon and link to Samuel10F Twitter">
+          <img src="/assets/icons/twitter-icon.svg" alt="Icon and link to Samuel10F Twitter" />
         </a>
       </li>
       <li class="cursor-pointer ml-4">
         <a href="https://www.linkedin.com/in/samuel10fernandez" target="_blank">
-          <img src="/assets/icons/Linkeding-icon.svg" alt="Icon and link to Samuel10F Linkedin">
+          <img src="/assets/icons/Linkeding-icon.svg" alt="Icon and link to Samuel10F Linkedin" />
         </a>
       </li>
       <li class="ml-4">
         <a href="https://github.com/Sam10F" target="_blank">
-          <img src="/assets/icons/github-icon.svg" alt="Icon and link to Samuel10F Github">
+          <img src="/assets/icons/github-icon.svg" alt="Icon and link to Samuel10F Github" />
         </a>
       </li>
     </ul>
   </nav>
-
 </header>
 
 <router-outlet class="order-last"></router-outlet>
