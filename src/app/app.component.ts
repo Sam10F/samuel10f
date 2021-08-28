@@ -27,7 +27,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.underline = document.getElementById('LinkActiveUnderline');
     this.navigationMenu = document.getElementById('NavigationMenu');
-    this.moveLinkActiveUnderline(1);
+    this.moveLinkActiveUnderline(0);
   }
 
   moveLinkActiveUnderline(linkIndex: number): void {
